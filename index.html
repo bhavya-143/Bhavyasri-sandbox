@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandbox Application Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #343a40;
+        }
+        
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 15px 20px;
+        }
+        
+        nav a:hover {
+            background-color: #007bff;
+        }
+        
+        main {
+            padding: 20px;
+        }
+        
+        footer {
+            text-align: center;
+            background: #343a40;
+            color: #fff;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Sandbox Application Portfolio</h1>
+        <p>By Kolli Bhavya Sri (Student ID: A00037677)</p>
+    </header>
+    <nav>
+        <a href="#network-diagram">Network Diagram</a>
+        <a href="#ip-address-table">IP Address Table</a>
+        <a href="#lab-report">Git Pages Lab Report</a>
+        <a href="#function-tests">Function Test Results</a>
+    </nav>
+    <main>
+        <section id="network-diagram">
+            <h2>1. Network Diagram</h2>
+            <p><strong>Note:</strong> I use an additional PC to check the application server from a web browser and added a switch for future PC and service additions.</p>
+            <pre><code>
+Gateway Router:
+Router1>enable
+Router1#configure terminal
+Router1(config)#interface fastethernet 0/0
+Router1(config-if)# ip address 192.168.18.1 255.0.0.0
+Router1(config-if)#no shutdown
+Router1(config-if)#exit
+
+Router1(config)#interface serial 0/1
+Router1(config-if)#ip address 192.168.118.1 255.0.0.0
+Router1(config-if)#no shutdown
+Router1(config-if)#exit
+
+Desktop (PC):
+Set all PCs for this and ping 192.168.18.1.
+Application Server:
+Add HTML page and turn on HTTP/HTTPS services.
+            </code></pre>
+        </section>
+
+        <section id="ip-address-table">
+            <h2>2. IP Address Table</h2>
+            <table>
+                <tr>
+                    <th>Device</th>
+                    <th>Role</th>
+                    <th>IP Address</th>
+                    <th>Subnet Mask</th>
+                </tr>
+                <tr>
+                    <td>Desktop VM (Ubuntu Desktop)</td>
+                    <td>Management</td>
+                    <td>192.168.18.2</td>
+                    <td>255.255.255.0</td>
+                </tr>
+                <tr>
+                    <td>Gateway Router VM (enp0s3)</td>
+                    <td>Internet Access</td>
+                    <td>10.0.3.16</td>
+                    <td>255.255.255.0</td>
+                </tr>
+                <tr>
+                    <td>Application Server VM</td>
+                    <td>Server</td>
+                    <td>192.168.118.2</td>
+                    <td>255.255.255.0</td>
+                </tr>
+            </table>
+        </section>
+
+        <section id="lab-report">
+            <h2>3. Git Pages Lab Report</h2>
+            <p>Follow these configuration steps for setting up virtual machines:</p>
+            <ol>
+                <li>Create three virtual machines: Ubuntu Desktop, Ubuntu Server, and Bitnami Application Server.</li>
+                <li>Install VirtualBox and required OS images.</li>
+                <li>Configure each machine's network interfaces and assign static IPs.</li>
+            </ol>
+        </section>
+
+        <section id="function-tests">
+            <h2>4. Function Test Results</h2>
+            <p>Test communication between VMs as per the design:</p>
+            <ul>
+                <li>Ping from Ubuntu Server to Ubuntu Desktop and Bitnami Application Server.</li>
+                <li>Ensure Ubuntu Desktop can ping Ubuntu Server.</li>
+                <li>Verify Bitnami Application Server communicates with Ubuntu Server.</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Kolli Bhavya Sri</p>
+    </footer>
+</body>
+
+</html>
